@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loki Hoodie — Stay Low Key with Hidden Tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap');
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      background-color: #0f1216;
+      color: #e1e1e1;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+    }
+    
+    .logo-main {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #64d2ff;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      position: relative;
+      text-shadow: 0 0 10px rgba(100, 210, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .logo-main:hover {
+      text-shadow: 0 0 15px rgba(100, 210, 255, 0.6);
+    }
+    
+    .logo-hidden {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(156,39,176,0.3) 0%, rgba(63,81,181,0.3) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-container:hover .logo-hidden {
+      opacity: 1;
+    }
+    
+    .logo-subtext {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      color: #a0a7b7;
+      margin-top: -0.5rem;
+      text-transform: uppercase;
+    }
+    
+    .logo-dots {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: -10px;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .logo-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #64d2ff;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-container:hover .logo-dot {
+      background: #9c27b0;
+      opacity: 1;
+      transform: scale(1.5);
+    }
+    
+    .logo-dots:hover .logo-dot:nth-child(odd) {
+      background: #3f51b5;
+    }
+    
+    .circuit-pattern {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: 
+        linear-gradient(to right, rgba(100, 210, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 210, 255, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-container:hover .circuit-pattern {
+      opacity: 0.3;
+    }
+    
+    .lens-icon {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #64d2ff;
+      opacity: 0.7;
+    }
+    
+    .lens-icon::before {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      top: 15%;
+      left: 15%;
+      border-radius: 50%;
+      border: 1px solid #64d2ff;
+    }
+    
+    .lens-icon::after {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      top: 30%;
+      left: 30%;
+      border-radius: 50%;
+      background: rgba(156, 39, 176, 0.3);
+      box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+    }
+    
+    .logo-container:hover .lens-icon {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    a {
+      color: #64d2ff;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    header {
+      background: #13171d;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #1c2129;
+    }
+    
+    header p {
+      margin: 0.5rem 0 0;
+      font-style: italic;
+      color: #a0a7b7;
+      letter-spacing: 0.05em;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: 2rem auto 3rem auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      margin-bottom: 3rem;
+    }
+    
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      background: #1c2129;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(27, 39, 60, 0.7);
+      padding: 2rem;
+    }
+    
+    .hero img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(100, 210, 255, 0.35);
+      filter: drop-shadow(0 0 4px #00aaff);
+      transition: transform 0.3s ease;
+    }
+    
+    .hero img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .hero-content h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #64d2ff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    
+    .hero-content p.lead {
+      font-size: 1.125rem;
+      color: #c0c7d0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn-order {
+      background-color: #64d2ff;
+      color: #0f1216;
+      font-weight: 700;
+      padding: 0.75rem 1.75rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      box-shadow: 0 5px 15px #4abfffcc;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-order:hover {
+      background-color: #2ab7ff;
+    }
+    
+    section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #64d2ff;
+      letter-spacing: 0.08em;
+      border-bottom: 2px solid #64d2ff;
+      padding-bottom: 0.25rem;
+    }
+    
+    ul.features-list {
+      list-style: none;
+      padding-left: 0;
+      color: #a0a7b7;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    
+    ul.features-list li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    
+    ul.features-list li::before {
+      content: '›';
+      color: #64d2ff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+    }
+    
+    .branding {
+      font-style: italic;
+      color: #8892b0;
+      max-width: 600px;
+    }
+    
+    form {
+      background: #1c2129;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(100, 210, 255, 0.15);
+      max-width: 480px;
+      margin: 0 auto;
+      color: #d1d9e6;
+    }
+    
+    form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #64d2ff;
+    }
+    
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      background: #0f1216;
+      color: #d1d9e6;
+      box-shadow: inset 0 0 5px #0aaddf66;
+      resize: vertical;
+    }
+    
+    form textarea {
+      min-height: 80px;
+    }
+    
+    form button {
+      background-color: #64d2ff;
+      border: none;
+      color: #0f1216;
+      padding: 0.75rem 1.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #4abfffcc;
+      letter-spacing: 0.06em;
+      transition: background-color 0.25s ease;
+    }
+    
+    form button:hover{
+      background-color: #2ab7ff;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: #5a6782;
+      border-top: 1px solid #1c2129;
+      font-family: 'Roboto Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column;
+      }
+      
+      .hero-content {
+        text-align: center;
+      }
+      
+      .logo-main {
+        font-size: 2.5rem;
+      }
+      
+      .lens-icon {
+        width: 20px;
+        height: 20px;
+        right: -15px;
+      }
+    }
+    
+    /* IR LED Simulation */
+    .ir-simulation {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-color: #0f1216;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0;
+      border: 1px solid #1c2129;
+    }
+    
+    .ir-hood {
+      position: absolute;
+      width: 80%;
+      height: 60%;
+      top: 20%;
+      left: 10%;
+      background-color: #1c2129;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+    
+    .ir-led {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #64d2ff;
+      box-shadow: 0 0 5px #64d2ff;
+      opacity: 0;
+    }
+    
+    .ir-led:nth-child(1) { top: 15%; left: 15%; }
+    .ir-led:nth-child(2) { top: 15%; left: 30%; }
+    .ir-led:nth-child(3) { top: 15%; left: 45%; }
+    .ir-led:nth-child(4) { top: 15%; left: 60%; }
+    .ir-led:nth-child(5) { top: 15%; left: 75%; }
+    .ir-led:nth-child(6) { top: 25%; left: 85%; }
+    .ir-led:nth-child(7) { top: 40%; left: 85%; }
+    .ir-led:nth-child(8) { top: 25%; left: 15%; }
+    .ir-led:nth-child(9) { top: 40%; left: 15%; }
+    .ir-led:nth-child(10) { top: 55%; left: 20%; }
+    .ir-led:nth-child(11) { top: 55%; left: 35%; }
+    .ir-led:nth-child(12) { top: 55%; left: 50%; }
+    .ir-led:nth-child(13) { top: 55%; left: 65%; }
+    .ir-led:nth-child(14) { top: 55%; left: 80%; }
+    
+    .ir-simulation:hover .ir-led {
+      animation: ir-pulse 1.5s infinite alternate;
+    }
+    
+    @keyframes ir-pulse {
+      0% { opacity: 0.3; }
+      100% { opacity: 1; background: #9c27b0; box-shadow: 0 0 10px #9c27b0; }
+    }
+    
+    .ir-simulation:hover .ir-led:nth-child(odd) {
+      animation-delay: 0.5s;
+      background: #3f51b5;
+      box-shadow: 0 0 10px #3f51b5;
+    }
+    
+    .ir-text {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.8rem;
+      color: #a0a7b7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="circuit-pattern"></div>
+      <h1 class="logo-main">LOKI</h1>
+      <div class="logo-hidden">INFRARED</div>
+      <div class="logo-dots">
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+        <div class="logo-dot"></div>
+      </div>
+      <div class="lens-icon"></div>
+      <p class="logo-subtext">INVISIBLE TECH</p>
+    </div>
+    <p>Stay Low Key with Hidden Tech</p>
+  </header>
+  
+  <main>
+    <section class="hero" aria-label="Product showcase of Loki Hoodie">
+      <img src="https://i.imgur.com/xSpPJAi.png" alt="Loki Hoodie front view with subtle lighting" loading="lazy" />
+      <div class="hero-content">
+        <h2>The Loki Hoodie</h2>
+        <p class="lead">Minimalist hoodie with discreet IR LED integration to keep your privacy in plain sight. Perfect for tech lovers who stay low key.</p>
+        <button class="btn-order" onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">Order Now</button>
+      </div>
+    </section>
+    
+    <section aria-labelledby="features-title">
+      <h3 id="features-title">Features</h3>
+      <ul class="features-list">
+        <li>IR LEDs (850–940nm) embedded exclusively along the inside rim of the hood</li>
+        <li>Two additional IR LEDs positioned at the neck area</li>
+        <li>LEDs face inward rather than outward, creating a specific illumination pattern</li>
+        <li>Discreet wiring system concealed within the fabric seams</li>
+        <li>AAA battery holder housed in a pocket within the hoodie's main pocket</li>
+        <li>Soft, breathable cotton-polyester blend fabric</li>
+        <li>Comfortable fit with minimalist "Loki" branding</li>
+      </ul>
+      
+      <div class="ir-simulation">
+        <div class="ir-hood"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <div class="ir-led"></div>
+        <p class="ir-text">Hover to simulate IR LED activation (visible only to cameras)</p>
+      </div>
+    </section>
+    
+    <section aria-labelledby="design-title">
+      <h3 id="design-title">Design Advantages</h3>
+      <ul class="features-list">
+        <li>Inside rim placement makes the technology even more subtle and hidden</li>
+        <li>Inward-facing LEDs create a more focused effect on the wearer's face/head</li>
+        <li>Internal positioning protects the LEDs from external damage</li>
+        <li>Installation maintains the hoodie's clean exterior aesthetic</li>
+      </ul>
+    </section>
+    
+    <section aria-labelledby="branding-title">
+      <h3 id="branding-title">Brand Story</h3>
+      <p class="branding">
+        "Loki" is inspired by the Norse god of mischief and the phrase "Low Key" – representing cleverness, subtlety, and hidden tech. This hoodie offers a privacy-focused, minimalist wearable for those who like to stay under the radar but ahead in style. Our logo embodies this philosophy with visible and hidden elements that reveal themselves upon closer inspection, just like our technology.
+      </p>
+    </section>
+    
+    <section aria-labelledby="order-title">
+      <h3 id="order-title">Place Your Order</h3>
+      <p>We are currently fulfilling orders manually. Please fill out the form below, and we will contact you with payment and shipping details.</p>
+      
+      <form id="order-form" aria-describedby="order-desc" onsubmit="submitForm(event)">
+        <label for="name">Full Name<span aria-hidden="true">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+        
+        <label for="email">Email Address<span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        
+        <label for="quantity">Quantity<span aria-hidden="true">*</span></label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+        
+        <label for="note">Additional Notes</label>
+        <textarea id="note" name="note" placeholder="Size preferences, questions, etc."></textarea>
+        
+        <button type="submit">Submit Order Request</button>
+        
+        <p id="form-message" role="alert" aria-live="polite" style="margin-top: 1rem; display:none;"></p>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    &copy; 2025 Loki Wear. Crafted discreetly for the low key.
+  </footer>
+  
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const form = event.target;
+      const msgEl = document.getElementById('form-message');
+      
+      // Simple validation already by required attributes, just get data
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const quantity = form.quantity.value;
+      const note = form.note.value.trim();
+      
+      if (!name || !email || !quantity) {
+        msgEl.style.display = 'block';
+        msgEl.textContent = 'Please fill in all required fields.';
+        msgEl.style.color = '#ff6b6b';
+        return;
+      }
+      
+      // Compose a mailto link with order details (for manual fulfillment)
+      const subject = encodeURIComponent('Loki Hoodie Order Request');
+      const bodyLines = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Quantity: ${quantity}`,
+        `Additional Notes: ${note || 'None'}`
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      
+      // Open default mail client with pre-filled email
+      const mailtoLink = `mailto:sales@lokiwear.com?subject=${subject}&body=${body}`;
+      
+      // Show success message and trigger mailto
+      msgEl.style.display = 'block';
+      msgEl.style.color = '#64d2ff';
+      msgEl.textContent = 'Your order request is ready. Please check your email client to send the order.';
+      
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+      }, 500);
+    }
+    
+    // Add animation to logo dots on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const dots = document.querySelectorAll('.logo-dot');
+      dots.forEach((dot, index) => {
+        dot.style.transitionDelay = `${index * 0.1}s`;
+      });
+    });
+  </script>
+</body>
+</html>

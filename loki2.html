@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stealth IR Hoodie - Invisible Illumination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hoodie-glow {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            transition: all 0.3s ease;
+        }
+        .hoodie-glow:hover {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+        }
+        .led-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+        }
+        .dark-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .dark-scrollbar::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .dark-scrollbar::-webkit-scrollbar-thumb {
+            background: #3a3a3a;
+            border-radius: 4px;
+        }
+        .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4a4a4a;
+        }
+        .tech-badge {
+            background: linear-gradient(135deg, rgba(239,68,68,0.8) 0%, rgba(239,68,68,0.5) 100%);
+            backdrop-filter: blur(4px);
+        }
+        .avatar-hover {
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        .avatar-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans dark-scrollbar">
+    <!-- Navigation -->
+    <nav class="bg-dark-800 text-white py-4 px-6 shadow-lg sticky top-0 z-50 border-b border-dark-700">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://github.com/mttechindustries/loki/blob/main/MT.Tech%20(1).png?raw=true" 
+                     alt="MT Tech Logo" 
+                     class="h-10 w-10 rounded-full object-cover avatar-hover">
+                <div class="text-2xl font-bold tracking-tighter">
+                    <span class="text-red-500 glow-text">IR</span>ON
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-red-400 transition">Features</a>
+                <a href="#tech" class="hover:text-red-400 transition">Technology</a>
+                <a href="#gallery" class="hover:text-red-400 transition">Gallery</a>
+                <a href="#faq" class="hover:text-red-400 transition">FAQ</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-dark-700 transition">
+                    <i class="fas fa-moon text-yellow-300" id="theme-icon"></i>
+                </button>
+                <button class="md:hidden p-2 rounded-full hover:bg-dark-700 transition">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-dark-800 to-dark-900 text-white py-20 border-b border-dark-700">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Stealth <span class="text-red-500 glow-text">IR</span> Hoodie</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-400">Invisible illumination technology seamlessly integrated into everyday wear.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105 shadow-lg shadow-red-900/50">
+                        Pre-order Now
+                    </button>
+                    <button class="border border-gray-600 hover:bg-dark-700 hover:border-gray-500 text-white px-8 py-3 rounded-full font-bold transition shadow-lg shadow-dark-800/50">
+                        Explore Tech
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative max-w-md mx-auto">
+                    <img src="https://raw.githubusercontent.com/mttechindustries/loki/refs/heads/main/image.webp" 
+                         alt="Stealth IR Hoodie" 
+                         class="rounded-lg shadow-2xl hoodie-glow w-full border border-dark-600">
+                    <div class="absolute -top-4 -left-4 bg-red-500 rounded-full w-8 h-8 led-pulse shadow-lg shadow-red-500/50"></div>
+                    <div class="absolute -bottom-4 -right-4 bg-red-500 rounded-full w-8 h-8 led-pulse shadow-lg shadow-red-500/50"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-dark-800 border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Covert <span class="text-red-500 glow-text">Illumination</span> Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Invisible Spectrum</h3>
+                    <p class="text-gray-400">850-940nm IR LEDs completely invisible to the naked eye while providing perfect illumination for night vision systems.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Concealed Wiring</h3>
+                    <p class="text-gray-400">Discreet wiring system completely hidden within fabric seams, maintaining the hoodie's clean exterior aesthetic.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Integrated Power</h3>
+                    <p class="text-gray-400">AAA battery holder conveniently housed in a pocket within the hoodie's main pocket for easy access and replacement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Deep Dive -->
+    <section id="tech" class="py-20 bg-dark-900 text-white border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Precision <span class="text-red-500 glow-text">Engineering</span></h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="https://github.com/mttechindustries/loki/blob/main/image%20(1).jpeg?raw=true" 
+                             alt="Hoodie Technology" 
+                             class="rounded-lg shadow-xl w-full border border-dark-600">
+                        <div class="absolute -bottom-4 -right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-lg tech-badge">
+                            IR-850-940nm
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center text-white">
+                            <span class="feature-icon bg-red-600 text-white shadow">
+                                <i class="fas fa-lightbulb"></i>
+                            </span>
+                            LED Placement Strategy
+                        </h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Embedded exclusively along the inside rim of the hood for subtle illumination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Two additional IR LEDs positioned at the neck area for complete facial coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Inward-facing orientation creates focused illumination on the wearer's face</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 flex items-center text-white">
+                            <span class="feature-icon bg-red-600 text-white shadow">
+                                <i class="fas fa-shield-alt"></i>
+                            </span>
+                            Design Advantages
+                        </h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Internal positioning protects LEDs from external damage and environmental factors</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Maintains the hoodie's original appearance with no visible external modifications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Optimized for night vision systems while remaining undetectable to casual observation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-dark-800 border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">In <span class="text-red-500 glow-text">Action</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://raw.githubusercontent.com/mttechindustries/loki/refs/heads/main/image.webp" 
+                         alt="Hoodie front view" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Standard View</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://github.com/mttechindustries/loki/blob/main/image%20(1).jpeg?raw=true" 
+                         alt="Hoodie side view" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Night Vision View</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://avatars.githubusercontent.com/u/211766651?v=4" 
+                         alt="Hoodie detail" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Developer Profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-dark-900 border-b border-dark-700">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Frequently <span class="text-red-500 glow-text">Asked</span> Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>How long does the battery last?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>The AAA battery pack provides approximately 8-10 hours of continuous illumination. Battery life may vary slightly based on environmental conditions and usage patterns.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>Is the hoodie machine washable?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>Yes, but you must remove the battery pack first. We recommend hand washing for optimal longevity of the LED components. Always air dry - do not tumble dry.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>What night vision equipment works best?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>Our IR LEDs are optimized for all standard night vision systems operating in the 850-940nm range. For best results, use with Gen 2+ or Gen 3 night vision devices.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>How noticeable are the LEDs in daylight?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>The LEDs are completely invisible in daylight and normal lighting conditions. The wiring and components are seamlessly integrated into the hoodie's construction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-dark-800 to-dark-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for <span class="text-red-500 glow-text">Covert</span> Operations?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-400">Experience the future of personal illumination technology with our Stealth IR Hoodie.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105 shadow-lg shadow-red-900/50">
+                    Pre-order Now <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                <button class="border border-gray-600 hover:bg-dark-700 hover:border-gray-500 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-dark-800/50">
+                    Contact Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-500 py-12 border-t border-dark-700">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://github.com/mttechindustries/loki/blob/main/MT.Tech%20(1).png?raw=true" 
+                             alt="MT Tech Logo" 
+                             class="h-10 w-10 rounded-full object-cover">
+                        <h3 class="text-white text-xl font-bold">IRON</h3>
+                    </div>
+                    <p class="mb-4">Advanced wearable illumination technology for professional applications.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Stealth IR Hoodie</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tactical IR Vest</a></li>
+                        <li><a href="#" class="hover:text-white transition">IR Gloves</a></li>
+                        <li><a href="#" class="hover:text-white transition">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Warranty</a></li>
+                        <li><a href="#" class="hover:text-white transition">Care Instructions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-700 mt-10 pt-10 text-center">
+                <p>&copy; 2023 IRON Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.classList.add('text-yellow-300');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.remove('text-yellow-300');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.classList.add('text-yellow-500');
+            }
+        });
+
+        // Set initial theme icon
+        if (html.classList.contains('dark')) {
+            themeIcon.classList.add('fa-moon', 'text-yellow-300');
+        } else {
+            themeIcon.classList.add('fa-sun', 'text-yellow-500');
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stealth IR Hoodie - Invisible Illumination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hoodie-glow {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            transition: all 0.3s ease;
+        }
+        .hoodie-glow:hover {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+        }
+        .led-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+        }
+        .dark-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .dark-scrollbar::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        .dark-scrollbar::-webkit-scrollbar-thumb {
+            background: #3a3a3a;
+            border-radius: 4px;
+        }
+        .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4a4a4a;
+        }
+        .tech-badge {
+            background: linear-gradient(135deg, rgba(239,68,68,0.8) 0%, rgba(239,68,68,0.5) 100%);
+            backdrop-filter: blur(4px);
+        }
+        .avatar-hover {
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        .avatar-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans dark-scrollbar">
+    <!-- Navigation -->
+    <nav class="bg-dark-800 text-white py-4 px-6 shadow-lg sticky top-0 z-50 border-b border-dark-700">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://github.com/mttechindustries/loki/blob/main/MT.Tech%20(1).png?raw=true" 
+                     alt="MT Tech Logo" 
+                     class="h-10 w-10 rounded-full object-cover avatar-hover">
+                <div class="text-2xl font-bold tracking-tighter">
+                    <span class="text-red-500 glow-text">IR</span>ON
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-red-400 transition">Features</a>
+                <a href="#tech" class="hover:text-red-400 transition">Technology</a>
+                <a href="#gallery" class="hover:text-red-400 transition">Gallery</a>
+                <a href="#faq" class="hover:text-red-400 transition">FAQ</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-dark-700 transition">
+                    <i class="fas fa-moon text-yellow-300" id="theme-icon"></i>
+                </button>
+                <button class="md:hidden p-2 rounded-full hover:bg-dark-700 transition">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-dark-800 to-dark-900 text-white py-20 border-b border-dark-700">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Stealth <span class="text-red-500 glow-text">IR</span> Hoodie</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-400">Invisible illumination technology seamlessly integrated into everyday wear.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105 shadow-lg shadow-red-900/50">
+                        Pre-order Now
+                    </button>
+                    <button class="border border-gray-600 hover:bg-dark-700 hover:border-gray-500 text-white px-8 py-3 rounded-full font-bold transition shadow-lg shadow-dark-800/50">
+                        Explore Tech
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative max-w-md mx-auto">
+                    <img src="https://raw.githubusercontent.com/mttechindustries/loki/refs/heads/main/image.webp" 
+                         alt="Stealth IR Hoodie" 
+                         class="rounded-lg shadow-2xl hoodie-glow w-full border border-dark-600">
+                    <div class="absolute -top-4 -left-4 bg-red-500 rounded-full w-8 h-8 led-pulse shadow-lg shadow-red-500/50"></div>
+                    <div class="absolute -bottom-4 -right-4 bg-red-500 rounded-full w-8 h-8 led-pulse shadow-lg shadow-red-500/50"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-dark-800 border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Covert <span class="text-red-500 glow-text">Illumination</span> Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Invisible Spectrum</h3>
+                    <p class="text-gray-400">850-940nm IR LEDs completely invisible to the naked eye while providing perfect illumination for night vision systems.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Concealed Wiring</h3>
+                    <p class="text-gray-400">Discreet wiring system completely hidden within fabric seams, maintaining the hoodie's clean exterior aesthetic.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-dark-700 p-8 rounded-xl border border-dark-600 hover:border-dark-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Integrated Power</h3>
+                    <p class="text-gray-400">AAA battery holder conveniently housed in a pocket within the hoodie's main pocket for easy access and replacement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Deep Dive -->
+    <section id="tech" class="py-20 bg-dark-900 text-white border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Precision <span class="text-red-500 glow-text">Engineering</span></h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="https://github.com/mttechindustries/loki/blob/main/image%20(1).jpeg?raw=true" 
+                             alt="Hoodie Technology" 
+                             class="rounded-lg shadow-xl w-full border border-dark-600">
+                        <div class="absolute -bottom-4 -right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-lg tech-badge">
+                            IR-850-940nm
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 flex items-center text-white">
+                            <span class="feature-icon bg-red-600 text-white shadow">
+                                <i class="fas fa-lightbulb"></i>
+                            </span>
+                            LED Placement Strategy
+                        </h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Embedded exclusively along the inside rim of the hood for subtle illumination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Two additional IR LEDs positioned at the neck area for complete facial coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Inward-facing orientation creates focused illumination on the wearer's face</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 flex items-center text-white">
+                            <span class="feature-icon bg-red-600 text-white shadow">
+                                <i class="fas fa-shield-alt"></i>
+                            </span>
+                            Design Advantages
+                        </h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Internal positioning protects LEDs from external damage and environmental factors</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Maintains the hoodie's original appearance with no visible external modifications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span>Optimized for night vision systems while remaining undetectable to casual observation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-dark-800 border-b border-dark-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">In <span class="text-red-500 glow-text">Action</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://raw.githubusercontent.com/mttechindustries/loki/refs/heads/main/image.webp" 
+                         alt="Hoodie front view" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Standard View</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://github.com/mttechindustries/loki/blob/main/image%20(1).jpeg?raw=true" 
+                         alt="Hoodie side view" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Night Vision View</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl shadow-lg border border-dark-600">
+                    <img src="https://avatars.githubusercontent.com/u/211766651?v=4" 
+                         alt="Hoodie detail" 
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white font-bold text-lg">Developer Profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-dark-900 border-b border-dark-700">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Frequently <span class="text-red-500 glow-text">Asked</span> Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>How long does the battery last?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>The AAA battery pack provides approximately 8-10 hours of continuous illumination. Battery life may vary slightly based on environmental conditions and usage patterns.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>Is the hoodie machine washable?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>Yes, but you must remove the battery pack first. We recommend hand washing for optimal longevity of the LED components. Always air dry - do not tumble dry.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>What night vision equipment works best?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>Our IR LEDs are optimized for all standard night vision systems operating in the 850-940nm range. For best results, use with Gen 2+ or Gen 3 night vision devices.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-dark-800 p-6 rounded-xl border border-dark-700 shadow-lg hover:border-dark-600 transition">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-lg text-white">
+                        <span>How noticeable are the LEDs in daylight?</span>
+                        <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="mt-3 text-gray-400 hidden">
+                        <p>The LEDs are completely invisible in daylight and normal lighting conditions. The wiring and components are seamlessly integrated into the hoodie's construction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-dark-800 to-dark-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for <span class="text-red-500 glow-text">Covert</span> Operations?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-400">Experience the future of personal illumination technology with our Stealth IR Hoodie.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-full font-bold text-lg transition transform hover:scale-105 shadow-lg shadow-red-900/50">
+                    Pre-order Now <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                <button class="border border-gray-600 hover:bg-dark-700 hover:border-gray-500 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-dark-800/50">
+                    Contact Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-500 py-12 border-t border-dark-700">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://github.com/mttechindustries/loki/blob/main/MT.Tech%20(1).png?raw=true" 
+                             alt="MT Tech Logo" 
+                             class="h-10 w-10 rounded-full object-cover">
+                        <h3 class="text-white text-xl font-bold">IRON</h3>
+                    </div>
+                    <p class="mb-4">Advanced wearable illumination technology for professional applications.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Stealth IR Hoodie</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tactical IR Vest</a></li>
+                        <li><a href="#" class="hover:text-white transition">IR Gloves</a></li>
+                        <li><a href="#" class="hover:text-white transition">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Warranty</a></li>
+                        <li><a href="#" class="hover:text-white transition">Care Instructions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-700 mt-10 pt-10 text-center">
+                <p>&copy; 2023 IRON Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.classList.add('text-yellow-300');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.remove('text-yellow-300');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.classList.add('text-yellow-500');
+            }
+        });
+
+        // Set initial theme icon
+        if (html.classList.contains('dark')) {
+            themeIcon.classList.add('fa-moon', 'text-yellow-300');
+        } else {
+            themeIcon.classList.add('fa-sun', 'text-yellow-500');
+        }
+    </script>
+</body>
+</html>
